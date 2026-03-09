@@ -1,64 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Calculator</title>
-    <link rel="stylesheet" href="style.css">
+<title>Budget Calculator</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
+
 <body>
-    <header>Budget Calculator</header>
 
-    <nav>
-        <a href="tip-calculator.html">Tip</a>
-        <a href="split-bill.html">Split Bill</a>
-        <a href="budget-calculator.html">Budget</a>
-        <a href="savings-calculator.html">Savings</a>
-        <a href="debt-payoff.html">Debt Payoff</a>
-        <a href="subscription-calculator.html">Subscription</a>
-    </nav>
+<header>
+<h1>Budget Calculator</h1>
+<nav>
+<a href="index.html">Home</a>
+</nav>
+</header>
 
-    <div class="container">
-        <div class="card">
-            <label for="income">Monthly Income:</label>
-            <input type="number" id="income" placeholder="Enter monthly income">
+<div class="container">
 
-            <label for="currencySelect">Currency:</label>
-            <select id="currencySelect" onchange="setCurrency(this.value)">
-                <option value="$">$ USD</option>
-                <option value="€">€ EUR</option>
-                <option value="£">£ GBP</option>
-            </select>
+<input id="income" placeholder="Monthly Income">
+<input id="expenses" placeholder="Monthly Expenses">
 
-            <button onclick="calculateBudget()">Calculate Budget</button>
+<button onclick="calcBudget()">Calculate</button>
 
-            <h3>Recommended Allocation:</h3>
-            <div id="needs" class="chip">Needs: $0.00</div>
-            <div id="wants" class="chip">Wants: $0.00</div>
-            <div id="savings" class="chip">Savings: $0.00</div>
+<div id="result" class="result"></div>
 
-            <canvas id="budgetChart" width="400" height="250"></canvas>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>Recent Calculations:</h3>
-            <div id="budgetHistory"></div>
-        </div>
-
-        <div class="pages-buttons">
-            <a href="tip-calculator.html"><button>Tip</button></a>
-            <a href="split-bill.html"><button>Split Bill</button></a>
-            <a href="savings-calculator.html"><button>Savings</button></a>
-            <a href="debt-payoff.html"><button>Debt Payoff</button></a>
-            <a href="subscription-calculator.html"><button>Subscription</button></a>
-        </div>
-
-        <div class="pages-buttons">
-            <button onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="charts.js"></script>
 </body>
 </html>
