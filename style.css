@@ -1,0 +1,195 @@
+/* ====== Fonts ====== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* ====== Color Palette ====== */
+:root {
+  --cream: #f6f0e1;
+  --sand: #e5d7b7;
+  --almond: #d2b48c;
+  --espresso: #4b382a;
+  --accent: #cfa67a;
+  --text-dark: #2e1f16;
+  --text-light: #fffaf0;
+}
+
+/* ====== Body & Background ====== */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin:0;
+  padding:0;
+  background: url('images/bg-linen.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-dark);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+body.dark {
+  background: #2e1f16;
+  color: var(--text-light);
+}
+
+/* ====== Header ====== */
+header {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 25px 0;
+  color: var(--espresso);
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* Dark mode header */
+body.dark header {
+  background: rgba(50,38,28,0.85);
+  color: var(--text-light);
+}
+
+/* ====== Navigation ====== */
+nav {
+  text-align: center;
+  padding: 12px 0;
+  background: rgba(146, 113, 41, 0.9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: var(--espresso);
+  font-weight: 700;
+  font-size: 1rem;
+}
+body.dark nav a { color: var(--text-light); }
+
+/* ====== Container ====== */
+.container {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+/* ====== Glassmorphism Card ====== */
+.card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, background 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+body.dark .card { background: rgba(50,38,28,0.85); }
+
+/* ====== Inputs ====== */
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 20px;
+  border: 1px solid var(--almond);
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+}
+input:focus, select:focus { border-color: var(--espresso); }
+
+/* ====== Buttons ====== */
+button {
+  background: linear-gradient(135deg, var(--almond), var(--espresso));
+  color: var(--cream);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background: linear-gradient(135deg, var(--espresso), var(--almond));
+  transform: scale(1.05);
+}
+
+/* ====== Result Chips ====== */
+.chip {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--espresso);
+  margin-top: 20px;
+  padding: 16px;
+  min-height: auto;
+  height: auto;
+  display: inline-block;
+  width: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.chip.pop { transform: scale(1.2); }
+
+/* Dark mode chip */
+body.dark .chip { background: #7a5a3e; color: var(--text-light); }
+
+/* ====== Pages Buttons ====== */
+.pages-buttons {
+  text-align: center;
+  margin-top: 25px;
+}
+.pages-buttons a button {
+  border-radius: 50px;
+  padding: 12px 28px;
+  margin: 5px;
+  background: var(--almond);
+  color: var(--espresso);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+.pages-buttons a button:hover {
+  background: var(--espresso);
+  color: var(--cream);
+  transform: scale(1.05);
+}
+body.dark .pages-buttons a button { background: #7a5a3e; color: var(--text-light); }
+
+/* ====== Sliders ====== */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--almond);
+  outline: none;
+  transition: background 0.2s;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--espresso);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--espresso);
+  cursor: pointer;
+}
+
+/* ====== Responsive ====== */
+@media(max-width:768px){
+  header { font-size:1.8rem; }
+  button { width: 100%; }
+  nav a { display: block; margin: 5px 0; }
+}
