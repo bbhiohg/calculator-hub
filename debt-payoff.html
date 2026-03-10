@@ -1,30 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Debt Payoff</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Payoff Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header>Debt Payoff Calculator</header>
 
-<header>
-<h1>Debt Payoff Calculator</h1>
-<nav>
-<a href="index.html">Home</a>
-</nav>
-</header>
+    <nav>
+        <a href="tip-calculator.html">Tip</a>
+        <a href="split-bill.html">Split Bill</a>
+        <a href="budget-calculator.html">Budget</a>
+        <a href="savings-calculator.html">Savings</a>
+        <a href="debt-payoff.html">Debt Payoff</a>
+        <a href="subscription-calculator.html">Subscription</a>
+    </nav>
 
-<div class="container">
+    <div class="container">
+        <div class="card">
+            <label for="debt">Total Debt:</label>
+            <input type="number" id="debt" placeholder="Enter total debt">
 
-<input id="debt" placeholder="Total Debt">
-<input id="payment" placeholder="Monthly Payment">
+            <label for="payment">Monthly Payment:</label>
+            <input type="number" id="payment" placeholder="Enter monthly payment">
 
-<button onclick="calcDebt()">Calculate</button>
+            <label for="interest">Monthly Interest %:</label>
+            <input type="number" id="interest" placeholder="Enter interest rate">
 
-<div id="result" class="result"></div>
+            <label for="currencySelect">Currency:</label>
+            <select id="currencySelect" onchange="setCurrency(this.value)">
+                <option value="$">$ USD</option>
+                <option value="€">€ EUR</option>
+                <option value="£">£ GBP</option>
+            </select>
 
-</div>
+            <button onclick="calculateDebt()">Calculate</button>
 
+            <h3>Months to Pay Off:</h3>
+            <div id="debtMonths" class="chip">0</div>
+
+            <canvas id="debtChart" width="400" height="250"></canvas>
+        </div>
+
+        <div class="card">
+            <h3>Recent Calculations:</h3>
+            <div id="debtHistory"></div>
+        </div>
+
+        <div class="pages-buttons">
+            <a href="tip-calculator.html"><button>Tip</button></a>
+            <a href="split-bill.html"><button>Split Bill</button></a>
+            <a href="budget-calculator.html"><button>Budget</button></a>
+            <a href="savings-calculator.html"><button>Savings</button></a>
+            <a href="subscription-calculator.html"><button>Subscription</button></a>
+        </div>
+
+        <div class="pages-buttons">
+            <button onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="charts.js"></script>
 </body>
 </html>
